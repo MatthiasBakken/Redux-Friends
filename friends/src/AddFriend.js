@@ -19,7 +19,6 @@ class AddFriend extends Component {
         });
     };
 
-
     render() {
         return (
             <div>
@@ -27,7 +26,7 @@ class AddFriend extends Component {
                     <input onChange={this.handleFriendInput} value={this.props.name} name='name' placeholder="Name" />
                     <input onChange={this.handleFriendInput} value={this.props.age} name='age' placeholder="Age" />
                     <input onChange={this.handleFriendInput} value={this.props.email} name='email' placeholder="Email" />
-                    <button onClick={() => createFriend(this.state)}> Add Friend</button>
+                    <button onClick={() => createFriend(this.state)}>Add Friend</button>
                 </form>
             </div>
         )
