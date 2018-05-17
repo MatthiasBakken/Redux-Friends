@@ -13,7 +13,7 @@ export const friendsReducer = (state = initialState, action) => {
         case SUCCESS_FRIENDS:
             return Object.assign({}, state, {
                 pending: false,
-                friends: [...action.payload] //this concats 2 arrays
+                friends: [...state.friends, ...action.payload] //this concats 2 arrays
             });
         case ERROR_FRIENDS:
             return Object.assign({}, state, {
