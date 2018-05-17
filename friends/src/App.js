@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { fetchFriend, createFriend } from './actions';
+import { fetchFriends, createFriend } from './actions';
 
 class App extends Component {
 
@@ -36,4 +36,4 @@ const mapStateToProps = state => {
     pending: state.pending
   }
 }
-export default connect(mapStateToProps, {fetchFriend, createFriend})(App);
+export default connect(mapStateToProps, {fetchFriends, createFriend})(App);
