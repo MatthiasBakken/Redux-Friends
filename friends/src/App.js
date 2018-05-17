@@ -29,11 +29,11 @@ class App extends Component {
 }
 
 
-mapStateToProps = state => {
+const mapStateToProps = state => {
   return {
     friends: state.friends,
     error: state.error,
     pending: state.pending
   }
 }
-export default App;
+export default connect(mapStateToProps, {fetchFriend, createFriend})(App);
