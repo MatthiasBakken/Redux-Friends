@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import { fetchFriends, createFriend } from './actions';
+import { connect } from 'react-redux';
 
 class App extends Component {
 
   state = {
     friend: ''
   };
+
+  componentDidMount() {
+    this.props.fetchFriends();
+  }
 
   render() {
     return <div className="App">
