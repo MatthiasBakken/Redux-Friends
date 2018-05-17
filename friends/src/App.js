@@ -19,15 +19,22 @@ class App extends Component {
       <div>
         <AddFriend />
       </div>
-      <ul>
+      <div className="friend-container">
         {this.props.friends.map(friend => {
-          return <li key={friend.name}>{friend.name}</li>;
+          return (
+            <div key={friend.name} className="friend-card">
+              <ul>
+                <li><span style={{ color: 'coral' }}>Name:</span> {friend.name}</li>
+                <li><span style={{ color: 'coral' }}>Age:</span> {friend.age}</li>  
+                <li><span style={{ color: 'coral' }}>Email:</span> {friend.email}</li>
+              </ul>
+            </div>
+          )
         })}
-      </ul>
+      </div>
     </div>;
   }
 }
-
 
 const mapStateToProps = state => {
   console.log(state)
@@ -37,4 +44,5 @@ const mapStateToProps = state => {
     pending: state.pending
   }
 }
+
 export default connect(mapStateToProps, { fetchFriends, createFriend })(App);
